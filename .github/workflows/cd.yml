@@ -21,7 +21,8 @@ jobs:
       - name: Push Docker image
         run: docker push nhatminh2005/laravel-app:latest
 
-      # - name: Trigger Deploy on VPS
-      #   run: |
-      #     curl -X POST http://your-vps-domain.com/deploy \
-      #          -H "Authorization: Bearer ${{ secrets.VPS_DEPLOY_KEY }}"
+      - name: Trigger Deploy on VPS
+        run: |
+          curl -X POST http://165.22.52.217/deploy \
+               -H "Authorization: Bearer ${{ secrets.VPS_DEPLOY_KEY }}"
+
